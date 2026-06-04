@@ -59,3 +59,30 @@ Product Detail page par:
 ✅ Lighting
 
 ✅ Rotation Animation
+
+
+Hello Team,
+
+Please find my MERN Stack Intern Assessment submission.
+
+Features Implemented:
+- Product Listing
+- Add Product
+- Product Detail
+- MongoDB Integration
+- REST APIs
+- Three.js 3D Cube Visualization
+- Update/Delete Functionality
+- Search Feature
+
+Live URL:
+<your frontend url>
+
+Attached:
+- Screenshots
+- Application Demo Video
+
+Thank you.
+
+Regards,
+Rahul Maurya
