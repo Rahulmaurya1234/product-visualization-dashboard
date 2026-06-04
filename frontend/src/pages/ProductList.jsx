@@ -5,6 +5,7 @@ import "./ProductList.css";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetchProducts();
@@ -20,6 +21,12 @@ function ProductList() {
   };
 
   const deleteProduct = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this product?"
+    );
+
+    if (!confirmDelete) return;
+
     try {
       await api.delete(`/products/${id}`);
       fetchProducts();
@@ -29,48 +36,70 @@ function ProductList() {
   };
 
   return (
-  <div className="container">
-    <h1 className="heading">
-      Products
-    </h1>
+    <div className="container">
+      <h1 className="heading">
+        Products
+      </h1>
 
-    {products.map((product) => (
-      <div
-        key={product._id}
-        className="card"
-      >
-        <h3>{product.name}</h3>
+      <input
+        type="text"
+        placeholder="Search Product..."
+        value={search}
+        onChange={(e) =>
+          setSearch(e.target.value)
+        }
+        className="search-input"
+      /> <br />
 
-        <p>
-          Category:
-          {product.category}
-        </p>
+      {products
+        .filter((product) =>
+          product.name
+            .toLowerCase()
+            .includes(
+              search.toLowerCase()
+            )
+        )
+        .map((product) => (
+          <div
+            key={product._id}
+            className="card"
+          >
+            <h3>{product.name}</h3>
 
-        <p>
-          Price: ₹{product.price}
-        </p>
+            <p>
+              <strong>Category:</strong>{" "}
+              {product.category}
+            </p>
 
-        <Link
-          to={`/product/${product._id}`}
-          className="detail-btn"
-        >
-          View Details
-        </Link>
+            <p>
+              <strong>Price:</strong> ₹
+              {product.price}
+            </p>
 
-        <br />
+            <Link
+              to={`/product/${product._id}`}
+              className="detail-btn"
+            >
+              View Details
+            </Link>
 
-        <button
-          className="delete-btn"
-          onClick={() =>
-            deleteProduct(product._id)
-          }
-        >
-          Delete
-        </button>
-      </div>
-    ))}
-  </div>
-);
+            <br />
+            <br />
+
+            <button
+              className="delete-btn"
+              onClick={() =>
+                deleteProduct(
+                  product._id
+                )
+              }
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+    </div>
+  );
 }
 
 export default ProductList;

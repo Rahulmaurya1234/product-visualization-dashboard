@@ -1,14 +1,9 @@
-.product-detail-container {
-  width: 450px;
-
+.product-container {
+  width: 420px;
   margin: 30px auto;
-
   padding: 20px;
-
   background: white;
-
   border-radius: 12px;
-
   box-shadow:
     0 6px 15px rgba(
       0,
@@ -20,55 +15,42 @@
 
 .product-title {
   text-align: center;
-
   color: #2563eb;
-
   margin-bottom: 20px;
-
   font-size: 28px;
-
   font-weight: 700;
 }
 
 .product-info {
   text-align: left;
+  margin-left: 20px;
 }
 
 .product-info h2 {
   margin-bottom: 15px;
-
-  color: #111827;
+  color: #01040b;
 }
 
 .product-info p {
   margin-bottom: 10px;
-
   font-size: 16px;
-
-  color: #374151;
+  color: #010408;
 }
 
 .product-input,
 .product-textarea {
   width: 100%;
-
   padding: 10px;
-
   margin-bottom: 12px;
-
-  border: 1px solid #d1d5db;
-
+  border: 1px solid #040609;
   border-radius: 8px;
-
   font-size: 14px;
-
   outline: none;
 }
 
 .product-input:focus,
 .product-textarea:focus {
   border-color: #2563eb;
-
   box-shadow:
     0 0 0 3px rgba(
       37,
@@ -80,7 +62,6 @@
 
 .product-textarea {
   min-height: 80px;
-
   resize: vertical;
 }
 
@@ -88,15 +69,10 @@
 .save-btn,
 .cancel-btn {
   padding: 10px 16px;
-
   border: none;
-
   border-radius: 8px;
-
   color: white;
-
   cursor: pointer;
-
   font-weight: 600;
 }
 
@@ -113,7 +89,6 @@
 
   margin-left: 10px;
 }
-
 .update-btn:hover,
 .save-btn:hover,
 .cancel-btn:hover {

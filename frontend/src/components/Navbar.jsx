@@ -8,14 +8,16 @@ function Navbar() {
         to="/"
         className="nav-link"
       >
-        Products
+        <button>Products</button>
+        
       </Link>
-
+        <h2>Product Dashboard</h2>
       <Link
         to="/add-product"
         className="nav-link"
       >
-        Add Product
+        <button>Add Product</button>
+       
       </Link>
     </div>
   );
