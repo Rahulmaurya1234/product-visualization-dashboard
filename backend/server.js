@@ -14,6 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Backend Running");
+});
 app.use("/api/products", productRoutes);
 
 // MongoDB Connection
